@@ -8,17 +8,32 @@ import com.mh.learn_osgi.hello_service.HelloService;
 
 public class HelloWorldActivator implements BundleActivator {
 	
-	ServiceReference helloServiceReference;
-	
+//	ServiceReference helloServiceReference;
+//	
+//    public void start(BundleContext context) throws Exception {
+//        System.out.println("Hello World!!");
+//        helloServiceReference= context.getServiceReference(HelloService.class.getName());
+//        HelloService helloService = (HelloService)context.getService(helloServiceReference);
+//        System.out.println(helloService.sayHello());
+//    }
+//    
+//    public void stop(BundleContext context) throws Exception {
+//        System.out.println("Goodbye World!!");
+//        context.ungetService(helloServiceReference);
+//    }
+    
+    HelloServiceTracker helloServiceTracker;
+    
     public void start(BundleContext context) throws Exception {
         System.out.println("Hello World!!");
-        helloServiceReference= context.getServiceReference(HelloService.class.getName());
-        HelloService helloService = (HelloService)context.getService(helloServiceReference);
+        helloServiceTracker = new HelloServiceTracker(context);
+        helloServiceTracker.open();
+        HelloService helloService = (HelloService) helloServiceTracker.getService();
         System.out.println(helloService.sayHello());
+
     }
-    
     public void stop(BundleContext context) throws Exception {
         System.out.println("Goodbye World!!");
-        context.ungetService(helloServiceReference);
+        helloServiceTracker.close();
     }
 }

@@ -7,4 +7,5 @@ Bundle-Activator: com.mh.learn_osgi.hello_world.HelloWorldActivator
 Bundle-Vendor: JAVAWORLD
 Bundle-Localization: plugin
 Import-Package: com.mh.learn_osgi.hello_service,
- org.osgi.framework;version="1.3.0"
+ org.osgi.framework;version="1.7.0",
+ org.osgi.util.tracker;version="1.5.1"
