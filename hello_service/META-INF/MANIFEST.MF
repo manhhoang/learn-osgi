@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Hello Service
+Bundle-SymbolicName: com.mh.learn_osgi.hello_service
+Bundle-Version: 1.0.0.beta
+Bundle-Activator: com.mh.learn_osgi.hello_service.HelloServiceActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.mh.learn_osgi.hello_service
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
