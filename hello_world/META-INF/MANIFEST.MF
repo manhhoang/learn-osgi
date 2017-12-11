@@ -4,6 +4,7 @@ Bundle-Name: Hello World
 Bundle-SymbolicName: com.mh.learn_osgi.hello_world
 Bundle-Version: 1.0.0.beta
 Bundle-Activator: com.mh.learn_osgi.hello_world.HelloWorldActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: JAVAWORLD
 Bundle-Localization: plugin
 Import-Package: com.mh.learn_osgi.hello_service,
